@@ -11,6 +11,7 @@ import AstroEcommers from "../assets/img-projects/astroEcommers.jpg";
 import CvBuilder from "../assets/img-projects/CvBuilder.png";
 import ChatAi from "../assets/img-projects/ChatAI.png";
 import ProductivityApp from "../assets/img-projects/productivityApp.png";
+import AutomotoresFront from "../assets/img-projects/automotoresFront.jpg";
 
 export const proyectos = [
   {
@@ -53,6 +54,16 @@ export const proyectos = [
     codigo:
       "https://github.com/Lautaro-R-collins/Multi-Model-AI-Chat-Platform.git",
     categoria: "fullstack",
+  },
+  {
+    titulo: "Automotores Frontend",
+    descripcion:
+      "Pagina de Automotores desarrollada con React, Tailwind y diseño responsivo.",
+    imagen: AutomotoresFront.src,
+    tecnologias: ["React", "Tailwind", "daisyUI"],
+    demo: "https://automotores-frontend.vercel.app",
+    codigo: "https://github.com/Lautaro-R-collins/Automotores-Frontend.git",
+    categoria: "frontend",
   },
   {
     titulo: "Astro Ecommerce",
