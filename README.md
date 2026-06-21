@@ -1,64 +1,109 @@
-# 🌌 Personal Portfolio – Lautaro 
+# 🌌 Vishal Rawal Portfolio
+
+A modern and responsive personal portfolio website showcasing my skills, projects, education, and web development journey.
 
 ---
 
-## 🚀 Características principales
+## 🚀 Key Features
 
-- ⚡️ Construido con **Astro** y **React** 
-- 🎨 **Diseño responsive**
-- 🧠 **Filtrado dinámico de proyectos**
-- 💬 Secciones personalizables: *Sobre mí*, *Proyectos*, *Experiencia*, *Contacto*  
-
----
-
-## 🧩 Tecnologías utilizadas
-
-- [Astro](https://astro.build/)  
-- [TailwindCSS](https://tailwindcss.com/)  
-- [TypeScript / JavaScript]  
-- [React (en componentes selectivos)]  
-- [Vite](https://vitejs.dev/)  
+* ⚡ Built with Astro and React
+* 🎨 Fully Responsive Design
+* 🧩 Interactive Project Showcase
+* 💼 Education & Experience Section
+* 📄 Resume Download Option
+* 📬 Contact Section
+* 🌙 Modern UI with Smooth Animations
 
 ---
 
-## 📂 Estructura del proyecto
+## 🛠️ Technologies Used
 
+* Astro
+* React
+* Tailwind CSS
+* JavaScript
+* Vite
+* HTML5
+* CSS3
 
+---
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
 /
 ├── public/
-│ └── images/ # Recursos estáticos
+│   └── images/
 ├── src/
-│ ├── components/ # Componentes reutilizables
-│ ├── layouts/ # Layout base
-│ ├── pages/ # Páginas principales (index, proyectos, etc.)
-│ ├── scripts/ # JS para interactividad (filtro, animaciones)
-│ ├── styles/ # CSS global o módulos
-│ └── data/ # Datos (proyectos, experiencia)
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── scripts/
+│   ├── styles/
+│   └── data/
 └── astro.config.mjs
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🚀 Getting Started
 
-All commands are run from the root of the project, from a terminal:
+Clone the repository:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+git clone https://github.com/vishallrawal/portfolio.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
 
 ---
-![Portfolio](https://github.com/user-attachments/assets/8c01d06f-2d36-46c1-a3ff-a6f7bf73ab67)
+
+## 📌 About Me
+
+I am Vishal Rawal, a BCA student passionate about Frontend Development, Open Source Contribution, and Modern Web Technologies. I enjoy building responsive web applications and continuously improving my development skills.
+
+---
+
+## 🌐 Live Demo
+
+https://vishallrawal.github.io/portfolio/
+
+---
+
+## 📬 Contact
+
+GitHub: https://github.com/vishallrawal
+
+LinkedIn: Add Your LinkedIn Profile Here
+
+Email: Add Your Email Here
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
 
 
