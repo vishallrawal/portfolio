@@ -1,5 +1,4 @@
 import {
-  FaXTwitter,
   FaLinkedinIn,
   FaGithub,
   FaInstagram,
@@ -9,17 +8,7 @@ const SocialIcons = () => {
   return (
     <div className="my-5 flex items-center justify-center">
       <a
-        href="https://www.linkedin.com/in/lautaro-rodr%C3%ADguez-collins-40505624a/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mr-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
-        aria-label="Linkedin"
-      >
-        <FaLinkedinIn className="h-7 w-7" />
-      </a>
-
-      <a
-        href="https://github.com/Lautaro-R-collins"
+        href="https://github.com/vishallrawal"
         target="_blank"
         rel="noopener noreferrer"
         className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
@@ -29,17 +18,17 @@ const SocialIcons = () => {
       </a>
 
       <a
-        href="https://x.com/lautarodevelops/"
+        href="www.linkedin.com/in/vishaalrawal448"
         target="_blank"
         rel="noopener noreferrer"
         className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
-        aria-label="Twitter"
+        aria-label="Linkedin"
       >
-        <FaXTwitter className="h-7 w-7" />
+        <FaLinkedinIn className="h-7 w-7" />
       </a>
 
       <a
-        href="https://www.instagram.com/lautarodevelops/"
+        href="https://www.instagram.com/vishxall._?igsh=MTFuc2h0aW10NXo4ZQ%3D%3D"
         target="_blank"
         rel="noopener noreferrer"
         className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"

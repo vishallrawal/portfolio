@@ -1,37 +1,50 @@
-import urbanStyle from "../assets/img-projects/urbanStyle.png";
-import imgNote from "../assets/img-projects/note-app.png";
-import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
-import VintageTone from "../assets/img-projects/vintageToneApp.jpg";
+import PortfolioImage from "../assets/img-projects/portfolio.png";
+import ShopZoneImage from "../assets/img-projects/shopzone.jpg";
+import MovieImage from "../assets/img-projects/movie.png";
+import AdmissionImage from "../assets/img-projects/admission.png";
 
 export const proyectos = [
-    {
-    titulo: "Vintage Tone",
-    imagen: VintageTone.src,
-    tecnologias: ["Vue.js", "Tailwind", "Express", "MongoDB"],
-    demo: "https://vintage-tone-front-vue.vercel.app",
-    codigo: "https://github.com/Lautaro-R-collins/VintageTone-Front-Vue.git",
-    categoria: "fullstack",
-  },
   {
-    titulo: "React Tiendita",
-    imagen: ReactEcommerce.src,
-    tecnologias: ["React", "Tailwind", "Node.js" ,"Express", "MongoDB", "jwt"],
-    demo: "https://react-e-commerce-three-phi.vercel.app",
-    codigo: "https://github.com/Lautaro-R-collins/React-E-commerce.git",
+    titulo: "Personal Portfolio Website",
+    imagen: PortfolioImage.src,
+    tecnologias: ["Astro", "JavaScript", "Tailwind CSS"],
+    demo: "#",
+    codigo: "#",
+    categoria: "frontend",
   },
+
   {
-    titulo: "E-commerce Urban Style",
-    descripcion: "Descripción breve del proyecto 1.",
-    imagen: urbanStyle.src,
-    tecnologias: ["React", "Tailwind", "Firebase"],
-    demo: "https://proyecto-final-rodriguez-sable.vercel.app/",
-    codigo: "https://github.com/Lautaro-R-collins/ProyectoFinal-Rodriguez.git",
+    titulo: "ShopZone - Online Grocery Store",
+    imagen: ShopZoneImage.src,
+    tecnologias: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "jQuery",
+      "AJAX",
+      "JSON",
+    ],
+    demo: "#",
+    codigo: "#",
+    categoria: "frontend",
   },
+
   {
-    titulo: "API REST para Ecommerce",
-    imagen: "https://miro.medium.com/1*47S4iWVwTicFkFL4-Z4uAA.png",
-    tecnologias: ["Express", "Node.js", "MongoDB", "Mongoose"],
-    demo: "https://react-e-commerce-three-phi.vercel.app/",
-    codigo: "https://github.com/Lautaro-R-collins/ApiRest-Ecommerce.git",
+    titulo: "Movie Ticket Booking System",
+    imagen: MovieImage.src,
+    tecnologias: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    demo: "#",
+    codigo: "#",
+    categoria: "frontend",
+  },
+
+  {
+    titulo: "Online Admission System",
+    imagen: AdmissionImage.src,
+    tecnologias: ["HTML", "CSS", "JavaScript", "jQuery", "JSON"],
+    demo: "#",
+    codigo: "#",
+    categoria: "frontend",
   },
 ];

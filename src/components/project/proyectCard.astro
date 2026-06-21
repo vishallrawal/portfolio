@@ -9,11 +9,19 @@ export interface Props {
   demo: string;
   codigo: string;
   categoria?: string;
-  index: number; 
+  index: number;
 }
 
-const { titulo, descripcion, imagen, tecnologias, demo, codigo, categoria, index } =
-  Astro.props;
+const {
+  titulo,
+  descripcion,
+  imagen,
+  tecnologias,
+  demo,
+  codigo,
+  categoria,
+  index,
+} = Astro.props;
 ---
 
 <div
@@ -23,11 +31,14 @@ const { titulo, descripcion, imagen, tecnologias, demo, codigo, categoria, index
 >
   <img
     src={imagen}
-    alt={`Imagen del proyecto ${titulo}`}
+    alt={`Project Image: ${titulo}`}
     class="h-50 w-full rounded-2xl object-cover p-3"
   />
+
   <div class="flex grow flex-col px-3 pb-3">
-    <h3 class="text-xl font-semibold text-white drop-shadow-[1px_1px_0_#7836cf]">{titulo}</h3>
+    <h3 class="text-xl font-semibold text-white drop-shadow-[1px_1px_0_#7836cf]">
+      {titulo}
+    </h3>
 
     <div class="my-1.5 flex flex-wrap gap-2">
       {
@@ -39,7 +50,9 @@ const { titulo, descripcion, imagen, tecnologias, demo, codigo, categoria, index
       }
     </div>
 
-    <p class="flex grow text-gray-400">{descripcion}</p>
+    <p class="flex grow text-gray-400">
+      {descripcion}
+    </p>
 
     <div class="mt-auto flex justify-between">
       <a
@@ -48,7 +61,7 @@ const { titulo, descripcion, imagen, tecnologias, demo, codigo, categoria, index
         rel="noopener noreferrer"
         href={demo}
       >
-        Demo
+        Live Demo
         <HiArrowRight
           className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
           size={18}
@@ -61,7 +74,7 @@ const { titulo, descripcion, imagen, tecnologias, demo, codigo, categoria, index
         target="_blank"
         rel="noopener noreferrer"
       >
-        Código
+        Source Code
         <HiArrowRight
           className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
           size={18}

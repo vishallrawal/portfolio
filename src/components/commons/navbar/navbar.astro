@@ -1,35 +1,30 @@
 ---
 import { FiMenu, FiX } from "react-icons/fi";
-import NotificationBell from "./notificationBell.jsx";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
 const links = [
-  { name: "Inicio", href: "/" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Sobre Mi", href: "/about" },
-  { name: "Contacto", href: "/contact" },
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/proyectos" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 ---
 
 <nav class="relative">
-  <!-- Input control (peer) -->
   <input id="menu-toggle" type="checkbox" class="peer hidden md:hidden" />
 
-  <!-- Navbar -->
   <nav
     class="fixed top-0 left-0 w-full z-50 bg-gray-950/20 backdrop-blur-md border-b border-white/10"
   >
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <!-- Logo -->
       <a href="/" class="flex items-center">
         <h3
           class="text-[#69c7c7] text-3xl font-bold drop-shadow-[1.5px_1.5px_0_#7836cf]"
         >
-          LRC
+          VR
         </h3>
       </a>
 
-      <!-- Desktop Links -->
       <ul id="navbar-links" class="hidden md:flex items-center space-x-8">
         {
           links.map((link) => (
@@ -45,10 +40,9 @@ const links = [
         }
 
         <li class="flex items-center gap-3">
-          <NotificationBell client:visible />
 
           <a
-            href="https://www.linkedin.com/in/lautaro-rodr%C3%ADguez-collins-40505624a/"
+            href="https://www.linkedin.com/vishaalrawal448"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -59,7 +53,7 @@ const links = [
           </a>
 
           <a
-            href="https://github.com/Lautaro-R-collins"
+            href="https://github.com/vishallrawal"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -69,9 +63,7 @@ const links = [
         </li>
       </ul>
 
-      <!-- Mobile right-side icons -->
       <div class="flex md:hidden items-center gap-4 z-50">
-        <NotificationBell client:visible />
         <label for="menu-toggle" class="cursor-pointer">
           <FiMenu className="h-7 w-7 text-white peer-checked:hidden" />
           <FiX className="h-7 w-7 text-white hidden peer-checked:block" />
@@ -80,13 +72,11 @@ const links = [
     </div>
   </nav>
 
-  <!-- Overlay (mobile only) -->
   <label
     for="menu-toggle"
     class="fixed inset-0 bg-black/60 hidden peer-checked:block cursor-pointer z-40 md:hidden"
   ></label>
 
-  <!-- Sidebar móvil -->
   <div
     class="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 peer-checked:translate-x-0 z-50 md:translate-x-full md:hidden"
   >
@@ -128,7 +118,7 @@ const links = [
 
       allLinks.forEach((link) => {
         const hrefAttr = link.getAttribute("href");
-        const href = hrefAttr?.replace(/\/$/, "") || "" || "/";
+        const href = hrefAttr?.replace(/\/$/, "") || "/" ;
 
         if (href === currentPath) {
           link.classList.add("text-[#7d2dac]", "font-extrabold");

@@ -37,78 +37,24 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState(null);
 
   const skills = {
-    "¿Qué tecnologías uso?": [
-      "Actualmente trabajo con tecnologías como React, Next.js, Vue.js, Astro, tailwind, Boostrap y demas librerias y frameworks para el frontend y en el backend trabajo con Node.js, Express, MongoDB, Firebase, entre otras.",
-    ],
-    "Mi Experiencia": [
-      "Tengo experiencia trabajando en startups y consultoras tecnológicas, desarrollando y maquetando sitios web a partir de diseños en Figma. Para ello, utilizo tecnologías frontend como Astro y React, junto con Tailwind CSS y otras librerías y frameworks para el estilizado y la optimización de interfaces.",
-    ],
-    "Mi formacion": [
-      "Estudié una tecnicatura en automatización de grado universitaria en el ITU, lo que me brindó las bases en programación. Posteriormente, decidí enfocarme en el desarrollo web y de software. Ademas, realicé diversos cursos, diplomados y capacitaciones en grandes universidades Argentinas, como la UTN, tambien, complemento mi formación con el aprendizaje autodidacta, lo que me permite mantenerme actualizado con los avances tecnológicos en el desarrollo de software.",
-    ],
-    "¿Cómo trabajo en equipo?": [
-      "Tengo experiencia trabajando en equipos multidisciplinarios, donde me he encargado del desarrollo frontend de aplicaciones web. Para ello, utilizo metodologías ágiles como Scrum y Kanban, además de herramientas de control de versiones como Git y GitHub para gestionar el flujo de trabajo. También cuento con experiencia en el uso de herramientas de gestión de proyectos como Trello y Jira, facilitando la organización y colaboración dentro del equipo.",
-    ],
-    "Metodolgias Agiles": [
-      "He trabajado con metodologías ágiles como Scrum y Kanban. En Scrum, participé en sprints de dos semanas, donde al finalizar cada sprint realizaba un pull request (PR) con mi trabajo, el cual pasaba por una fase de revisión y corrección antes de ser fusionado y enviado a producción. También he trabajado con Kanban, utilizando tableros para gestionar tareas y moverlas según su estado de progreso. Además, participé en reuniones diarias (dailies) para planificar y reportar avances del proyecto, asegurando una comunicación eficiente dentro del equipo.",
-    ],
-  };
+  "Technical Skills": [
+    "HTML, CSS, JavaScript, Bootstrap, jQuery, AJAX, JSON, React, Astro, Git, and GitHub."
+  ],
 
-  const toggleItem = (item) => {
-    setOpenItem(openItem === item ? null : item);
-  };
+  "Web Development": [
+    "I build responsive and user-friendly websites using modern web technologies with a focus on performance, accessibility, and clean design."
+  ],
 
-  return (
-    <div className="flex flex-col items-center px-4 text-left">
-      <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-white text-center text-4xl font-bold drop-shadow-[2px_2px_0_#7836cf]">
-          Sobre mí y mi trabajo
-        </h2>
-        <ul className="mt-8 space-y-4 text-lg drop-shadow-[2px_2px_0_#7836cf]">
-          {Object.entries(skills).map(([category, items]) => (
-            <li key={category} className="w-full">
-              <div
-                onClick={() => toggleItem(category)}
-                className="bg-gray-900 hover:bg-opacity-80 w-full cursor-pointer overflow-hidden rounded-2xl text-left transition-all"
-              >
-                <div className="flex items-center gap-3 p-4">
-                  {CategoryIcons[category]}
-                  <div className="flex grow items-center justify-between gap-2">
-                    <div className="max-w-[200px] min-w-0 overflow-hidden md:max-w-none">
-                      <span className="block truncate text-lg text-white drop-shadow-[1px_1px_0_#7836cf] font-bold">
-                        {category}
-                      </span>
-                    </div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className={`h-6 w-6 shrink-0 transform text-[#6a2cbb] transition-transform ${
-                        openItem === category ? "rotate-180" : ""
-                      }`}
-                    >
-                      <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-                    </svg>
-                  </div>
-                </div>
+  "Education": [
+    "Currently pursuing a Bachelor of Computer Applications (BCA) while continuously improving my web development and programming skills through practical projects and self-learning."
+  ],
 
-                <div
-                  className={`px-4 transition-all duration-300 ${
-                    openItem === category
-                      ? "max-h-[500px] pb-4 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-[0.8em] text-white text-semibold ">
-                    {skills[category]}
-                  </p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
+  "Projects": [
+    "Developed projects including a Personal Portfolio Website, ShopZone Online Grocery Store, Movie Ticket Booking System, and Online Admission System."
+  ],
+
+  "Future Goals": [
+    "Focused on becoming a skilled Full Stack Developer, contributing to open-source projects, and building real-world applications."
+  ]
 };
 export default SkillsList;

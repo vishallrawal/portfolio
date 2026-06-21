@@ -1,6 +1,4 @@
 ---
-import { HiArrowRight } from "react-icons/hi";
-
 export interface Props {
   titulo: string;
   imagen: string;
@@ -17,12 +15,14 @@ const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
 >
   <img
     src={imagen}
-    alt={`Proyecto: ${titulo}`}
+    alt={`Project: ${titulo}`}
     class="h-52 p-3 w-full object-cover rounded-2xl"
   />
 
   <div class="flex flex-col grow p-3">
-    <h3 class="text-lg font-semibold mb-2 text-white drop-shadow-[1px_1px_0_#7836cf]">{titulo}</h3>
+    <h3 class="text-lg font-semibold mb-2 text-white drop-shadow-[1px_1px_0_#7836cf]">
+      {titulo}
+    </h3>
 
     <div class="flex flex-wrap gap-2 mb-4">
       {
@@ -41,7 +41,7 @@ const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
         rel="noopener noreferrer"
         class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
       >
-        Demo
+        Live Demo
       </a>
 
       <a
@@ -50,7 +50,7 @@ const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
         rel="noopener noreferrer"
         class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
       >
-        Código
+        Source Code
       </a>
     </div>
   </div>

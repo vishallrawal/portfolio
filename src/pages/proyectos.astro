@@ -7,26 +7,41 @@ import Banner from "../components/commons/banners/banner.astro";
 import { proyectos } from "../data/projectData.js";
 ---
 
-<Layout title="Proyectos" description="Proyectos">
-  <Hero titulo="Proyectos" />
+<Layout title="Projects" description="Projects">
+  <Hero titulo="Projects" />
 
-  <!-- Botones -->
+  <!-- Filter Buttons -->
   <div class="mt-6 mb-6 flex flex-wrap justify-center gap-3 px-2">
-    <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="all">
-      Todos
+    <button
+      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
+      data-filter="all"
+    >
+      All
     </button>
-    <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="fullstack">
+
+    <button
+      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
+      data-filter="fullstack"
+    >
       Full Stack
     </button>
-    <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="frontend">
+
+    <button
+      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
+      data-filter="frontend"
+    >
       Frontend
     </button>
-    <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="backend">
+
+    <button
+      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
+      data-filter="backend"
+    >
       Backend
     </button>
   </div>
 
-  <!-- Cards -->
+  <!-- Project Cards -->
   <div
     id="projects-container"
     class="4xl:px-96 flex flex-wrap justify-center gap-5 px-3 pt-5 xl:px-32 2xl:px-60"
@@ -47,13 +62,13 @@ import { proyectos } from "../data/projectData.js";
     }
   </div>
 
-  <!-- Ver el resto de los proyectos -->
-  <div class="flex justify-center mt-8">
+  <!-- Load More -->
+  <div class="mt-8 flex justify-center">
     <button
       id="load-more"
-      class="px-6 py-2 cursor-pointer bg-[#69c7c7] text-[#1d1250] font-bold rounded-full hover:bg-[#46caca] drop-shadow-[2px_2px_0_#7836cf] active:translate-y-0.5 active:drop-shadow-none transition-all"
+      class="cursor-pointer rounded-full bg-[#69c7c7] px-6 py-2 font-bold text-[#1d1250] hover:bg-[#46caca] drop-shadow-[2px_2px_0_#7836cf] active:translate-y-0.5 active:drop-shadow-none transition-all"
     >
-      Ver más
+      Load More
     </button>
   </div>
 
@@ -62,7 +77,6 @@ import { proyectos } from "../data/projectData.js";
 
 <script is:inline>
 (function () {
-  /* ---------------- CONFIG ---------------- */
   const VISIBLE_CLASS = "project-visible";
   const HIDDEN_CLASS = "project-hidden";
   const HIDE_TIMEOUT = 300;
@@ -74,7 +88,6 @@ import { proyectos } from "../data/projectData.js";
   let filterButtons = [];
   let loadMoreBtn = null;
 
-  /* ---------------- HELPERS ---------------- */
   function queryElements() {
     cards = Array.from(document.querySelectorAll("[data-index]"));
     filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
@@ -92,6 +105,7 @@ import { proyectos } from "../data/projectData.js";
   function hideCard(card) {
     card.classList.remove(VISIBLE_CLASS);
     card.classList.add(HIDDEN_CLASS);
+
     setTimeout(() => {
       if (card.classList.contains(HIDDEN_CLASS)) {
         card.style.display = "none";
@@ -104,7 +118,6 @@ import { proyectos } from "../data/projectData.js";
     if (btn) btn.classList.add("active");
   }
 
-  /* ---------------- FILTRADO ---------------- */
   function applyFilter(filter) {
     activeFilter = filter ?? "all";
     const normalized = activeFilter.toLowerCase();
@@ -122,38 +135,41 @@ import { proyectos } from "../data/projectData.js";
       if (i < itemsToShow) showCard(card);
     });
 
-    // botón ver más visible solo si hay más para ver
     if (!loadMoreBtn) return;
-    loadMoreBtn.style.display = filteredCards.length > itemsToShow ? "block" : "none";
+
+    loadMoreBtn.style.display =
+      filteredCards.length > itemsToShow ? "block" : "none";
   }
 
-  /* ---------------- Filtros eventos ---------------- */
   function attachFilterEvents() {
     if (!filterButtons.length) return;
+
     filterButtons.forEach((btn) => {
       btn.onclick = () => {
-        itemsToShow = INITIAL_VISIBLE; 
+        itemsToShow = INITIAL_VISIBLE;
         const filter = btn.dataset.filter || "all";
         setActiveButton(btn);
         applyFilter(filter);
       };
     });
 
-    // activar "Todos" al inicio
-    const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+    // Activate "All" on page load
+    const allBtn = document.querySelector(
+      '.filter-btn[data-filter="all"]'
+    );
+
     setActiveButton(allBtn);
   }
 
-  /* ---------------- Ver mas ---------------- */
   function attachLoadMore() {
     if (!loadMoreBtn) return;
+
     loadMoreBtn.onclick = () => {
-      itemsToShow += INITIAL_VISIBLE; 
-      applyFilter(activeFilter); 
+      itemsToShow += INITIAL_VISIBLE;
+      applyFilter(activeFilter);
     };
   }
 
-  /* ---------------- INIT ---------------- */
   function init() {
     queryElements();
     attachFilterEvents();

@@ -3,7 +3,7 @@ import { FaRegCopy } from "react-icons/fa";
 
 export default function EmailCopy() {
   const [copied, setCopied] = useState(false);
-  const email = "lautarodevelops@gmail.com";
+  const email = "vishalrawal448@gmail.com";
 
   const copyToClipboard = async () => {
     try {
@@ -11,7 +11,7 @@ export default function EmailCopy() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Error al copiar: ", err);
+      console.error("Copy failed:", err);
     }
   };
 
@@ -23,7 +23,7 @@ export default function EmailCopy() {
         className="flex items-center gap-2 cursor-pointer font-bold rounded-md border-none  px-2 py-1 text-sm bg-primary hover:bg-secondary drop-shadow-[2px_2px_0_#0debd8]"
       >
         <FaRegCopy className="text-gray-300" />
-        {copied ? "Copiado!" : "Copiar"}
+        {copied ? "Copied!" : "Copy"}
       </button>
     </div>
   );
