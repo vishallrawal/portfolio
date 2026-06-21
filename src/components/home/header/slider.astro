@@ -21,9 +21,9 @@ const technologies = [
       technologies.concat(technologies, technologies).map((tech) => (
         <div class="group flex items-center gap-2 transition-all duration-300">
           <img
-            src={`/svg/${tech}.svg`}
+            src={`${import.meta.env.BASE_URL}svg/${tech}.svg`}
             alt={tech}
-            class="h-7 w-auto object-contain  transition-transform group-hover:scale-110"
+            class="h-7 w-auto object-contain transition-transform group-hover:scale-110"
             width="30"
             height="30"
             loading="lazy"
@@ -46,8 +46,13 @@ const technologies = [
       transform: translateX(-50%);
     }
   }
+
   .animate-scroll {
     animation: scroll 60s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
   }
 
   @media (min-width: 768px) {
