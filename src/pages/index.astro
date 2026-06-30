@@ -4,13 +4,18 @@ import Header from "../components/home/header/header.astro";
 import Slider from "../components/home/header/slider.astro";
 import AboutHome from "../components/home/aboutHome/aboutHome.astro";
 import HomeProyect from "../components/home/homeProyect/homeProyect.astro";
+import LatestBlog from "../components/home/latestBlog/latestBlog.astro";
 import Banner from "../components/commons/banners/banner.astro";
 ---
 
-<Layout>
+<Layout 
+  title="Vishal Rawal | Fullstack Developer Portfolio" 
+  description="Explore the personal developer showcase and technical writing blog of Vishal Rawal. Featuring React, Angular, Vue, and backend Node.js projects."
+>
   <Header />
   <Slider />
   <AboutHome />
   <HomeProyect />
+  <LatestBlog />
   <Banner />
 </Layout>

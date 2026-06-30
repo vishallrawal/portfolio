@@ -7,44 +7,56 @@ import Banner from "../components/commons/banners/banner.astro";
 import { proyectos } from "../data/projectData.js";
 ---
 
-<Layout title="Projects" description="Projects">
-  <Hero titulo="Projects" />
+<Layout 
+  title="Projects Showcase | Vishal Rawal" 
+  description="Explore my projects including e-commerce sites, chatbot engines, movie scheduling tools, university registration grids, and CLI games."
+>
+  <Hero titulo="Projects Portfolio" />
 
-  <!-- Filter Buttons -->
-  <div class="mt-6 mb-6 flex flex-wrap justify-center gap-3 px-2">
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="all"
-    >
-      All
-    </button>
-
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="fullstack"
-    >
-      Full Stack
-    </button>
-
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="frontend"
-    >
-      Frontend
-    </button>
-
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="backend"
-    >
-      Backend
-    </button>
+  <!-- Subtitle Intro -->
+  <div class="max-w-2xl mx-auto text-center px-6 mt-6 mb-10">
+    <p class="text-gray-400 text-base md:text-lg font-medium leading-relaxed">
+      A collection of frontend, backend, and fullstack applications built utilizing React, Astro, jQuery, Node.js, and C.
+    </p>
   </div>
 
-  <!-- Project Cards -->
+  <!-- Filter Buttons Section -->
+  <div class="max-w-xl mx-auto px-6 mb-12">
+    <div class="glass-panel p-2 rounded-2xl flex flex-wrap justify-center gap-2 border-white/5 shadow-2xl">
+      <button
+        class="filter-btn cursor-pointer rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200"
+        data-filter="all"
+      >
+        All
+      </button>
+
+      <button
+        class="filter-btn cursor-pointer rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200"
+        data-filter="fullstack"
+      >
+        Full Stack
+      </button>
+
+      <button
+        class="filter-btn cursor-pointer rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200"
+        data-filter="frontend"
+      >
+        Frontend
+      </button>
+
+      <button
+        class="filter-btn cursor-pointer rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200"
+        data-filter="backend"
+      >
+        Backend
+      </button>
+    </div>
+  </div>
+
+  <!-- Project Cards Grid Container -->
   <div
     id="projects-container"
-    class="4xl:px-96 flex flex-wrap justify-center gap-5 px-3 pt-5 xl:px-32 2xl:px-60"
+    class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-6 pt-5"
   >
     {
       proyectos.map((proyecto, index) => (
@@ -62,13 +74,13 @@ import { proyectos } from "../data/projectData.js";
     }
   </div>
 
-  <!-- Load More -->
-  <div class="mt-8 flex justify-center">
+  <!-- Load More Button -->
+  <div class="mt-16 flex justify-center" id="load-more-container">
     <button
       id="load-more"
-      class="cursor-pointer rounded-full bg-[#69c7c7] px-6 py-2 font-bold text-[#1d1250] hover:bg-[#46caca] drop-shadow-[2px_2px_0_#7836cf] active:translate-y-0.5 active:drop-shadow-none transition-all"
+      class="cursor-pointer rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-8 py-3.5 text-sm font-bold uppercase tracking-wider transition-all duration-300 glow-btn-purple"
     >
-      Load More
+      Load More Projects
     </button>
   </div>
 
@@ -81,7 +93,7 @@ import { proyectos } from "../data/projectData.js";
   const HIDDEN_CLASS = "project-hidden";
   const HIDE_TIMEOUT = 300;
 
-  const INITIAL_VISIBLE = 12;
+  const INITIAL_VISIBLE = 6;
   let itemsToShow = INITIAL_VISIBLE;
   let activeFilter = "all";
   let cards = [];
@@ -89,7 +101,7 @@ import { proyectos } from "../data/projectData.js";
   let loadMoreBtn = null;
 
   function queryElements() {
-    cards = Array.from(document.querySelectorAll("[data-index]"));
+    cards = Array.from(document.querySelectorAll(".project-card"));
     filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
     loadMoreBtn = document.getElementById("load-more");
   }
@@ -114,15 +126,21 @@ import { proyectos } from "../data/projectData.js";
   }
 
   function setActiveButton(btn) {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    if (btn) btn.classList.add("active");
+    filterButtons.forEach((b) => {
+      b.classList.remove("bg-purple-600", "text-white", "glow-btn-purple", "scale-105");
+      b.classList.add("text-gray-400", "hover:text-white");
+    });
+    if (btn) {
+      btn.classList.remove("text-gray-400", "hover:text-white");
+      btn.classList.add("bg-purple-600", "text-white", "glow-btn-purple", "scale-105");
+    }
   }
 
   function applyFilter(filter) {
     activeFilter = filter ?? "all";
     const normalized = activeFilter.toLowerCase();
 
-    cards = Array.from(document.querySelectorAll("[data-index]"));
+    cards = Array.from(document.querySelectorAll(".project-card"));
 
     const filteredCards = cards.filter((card) => {
       const categoria = (card.dataset.categoria ?? "").toLowerCase();

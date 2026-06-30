@@ -6,17 +6,14 @@ export interface Props {
 const { titulo } = Astro.props;
 ---
 
-<section
-  class="relative text-white py-24 mt-[72px] overflow-hidden
-  bg-[linear-gradient(#ffffff33_1px,transparent_1px),linear-gradient(90deg,#ffffff33_1px,transparent_1px)]
-  bg-size-[25px_25px] bg-[#15052c]
-  mask-[linear-gradient(to_bottom,black,black,transparent)]"
->
-  <div class="max-w-6xl mx-auto px-6 text-center relative">
-    <h1
-      class="text-4xl md:text-6xl font-extrabold mb-4 tracking-wide drop-shadow-lg text-shadow-cyan"
-    >
-      {titulo}
+<section class="relative py-20 overflow-hidden bg-transparent">
+  <!-- Glowing subtle lines -->
+  <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-2 uppercase font-display">
+      <span class="text-gradient-cyan">{titulo}</span>
     </h1>
+    <div class="h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-4"></div>
   </div>
 </section>

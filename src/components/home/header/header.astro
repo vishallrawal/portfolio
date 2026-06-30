@@ -3,41 +3,58 @@ import SocialIcons from "../../commons/socialIcons/socialIcons.jsx";
 import TypeEfect from "../header/typeEfect.jsx";
 ---
 
-<header class="relative h-screen bg-gray-950 overflow-hidden">
-  <div class="absolute inset-0 grid grid-cols-2">
-    <div
-      class="animate-gradientMove h-80 bg-linear-to-br from-[#982cf0] to-[#581f86] opacity-30 blur-[120px]"
-    >
-    </div>
-    <div
-      class="animate-gradientMove2 h-80 bg-linear-to-br from-[#277752] to-[#02ffee] opacity-30 blur-[120px]"
-    >
-    </div>
+<header class="relative h-[90vh] bg-transparent overflow-hidden flex items-center justify-center">
+  <!-- Glowing Abstract Spheres (Animated via CSS in global.css) -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-[20%] left-[20%] w-[350px] h-[350px] rounded-full bg-purple-600/10 blur-[100px] animate-gradientMove"></div>
+    <div class="absolute bottom-[20%] right-[20%] w-[350px] h-[350px] rounded-full bg-cyan-600/10 blur-[100px] animate-gradientMove2"></div>
   </div>
 
-  <main
-    class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
-  >
-    <h1 class="text-4xl md:text-7xl font-bold text-white text-shadow mt-10">
-      Hi! I'm Vishal Rawal
+  <!-- Tech Grid Coordinates Backdrop Overlay -->
+  <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto mt-10">
+    
+    <!-- Welcome Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-bold tracking-wider uppercase mb-6">
+      <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+      Welcome to my creative universe
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-white mb-4 uppercase font-display leading-[0.95]">
+      Vishal <span class="text-gradient">Rawal</span>
     </h1>
 
-    <TypeEfect client:visible />
+    <!-- Subtitle Typewriter -->
+    <TypeEfect client:load />
 
-    <p
-  class="text-xs md:text-xl text-white max-w-sm md:max-w-xl font-semibold mt-3"
->
-  Explore my projects, learn more about me, and feel free to get in touch.
-  I am just one message away!
-</p>
-    <SocialIcons client:visible />
-    <a
-      target="_blank"
-      href={`${import.meta.env.BASE_URL}vishal-resume.pdf`}
-      class="px-6 py-3 bg-primary hover:bg-secondary mt-3 text-white font-semibold rounded-3xl transition-all duration-150
-         drop-shadow-[2px_2px_0_#0debd8] active:translate-0.5 active:drop-shadow-none"
-    >
-      Download Resume
-    </a>
-  </main>
+    <!-- Intro Text -->
+    <p class="text-gray-400 max-w-md sm:max-w-xl font-medium mt-6 text-sm sm:text-base md:text-lg leading-relaxed">
+      Designing & building dynamic, high-graphics digital ecosystems. Focused on premium frontend crafts, WebSockets, and clean coding architectures.
+    </p>
+
+    <!-- Social Connections -->
+    <div class="mt-4">
+      <SocialIcons client:load />
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-6 flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <a
+        href={`${import.meta.env.BASE_URL}proyectos`}
+        class="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold rounded-2xl transition-all duration-300 glow-btn-purple text-sm sm:text-base uppercase tracking-wider"
+      >
+        Explore Projects
+      </a>
+      <a
+        target="_blank"
+        href={`${import.meta.env.BASE_URL}vishal-resume.pdf`}
+        class="px-8 py-3.5 bg-gray-900/80 border border-white/10 hover:bg-gray-900 text-white font-bold rounded-2xl transition-all duration-300 glow-btn-cyan text-sm sm:text-base uppercase tracking-wider"
+      >
+        Download Resume
+      </a>
+    </div>
+
+  </div>
 </header>

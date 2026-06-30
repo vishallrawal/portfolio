@@ -1,50 +1,39 @@
 import PortfolioImage from "../assets/img-projects/portfolio.png";
-import ShopZoneImage from "../assets/img-projects/shopzone.jpg";
+import FlixCartImage from "../assets/img-projects/flixcart.jpg";
 import MovieImage from "../assets/img-projects/movie.png";
-import AdmissionImage from "../assets/img-projects/admission.png";
+import ChatbotImage from "../assets/img-projects/chatbot.jpg";
 
 export const proyectos = [
   {
     titulo: "Personal Portfolio Website",
     imagen: PortfolioImage.src,
-    tecnologias: ["Astro", "JavaScript", "Tailwind CSS"],
-    demo: "#",
-    codigo: "#",
+    tecnologias: ["Astro", "React", "Tailwind CSS", "CSS3"],
+    demo: "https://vishallrawal.github.io/portfolio/",
+    codigo: "https://github.com/vishallrawal/portfolio",
     categoria: "frontend",
   },
-
   {
-    titulo: "ShopZone - Online Grocery Store",
-    imagen: ShopZoneImage.src,
-    tecnologias: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "JavaScript",
-      "jQuery",
-      "AJAX",
-      "JSON",
-    ],
-    demo: "#",
-    codigo: "#",
+    titulo: "FlixCart - Online Shopping Website",
+    imagen: FlixCartImage.src,
+    tecnologias: ["TypeScript", "React", "Tailwind CSS", "Vite"],
+    demo: "https://github.com/vishallrawal/FlixCart-Website",
+    codigo: "https://github.com/vishallrawal/FlixCart-Website",
     categoria: "frontend",
   },
-
   {
     titulo: "Movie Ticket Booking System",
     imagen: MovieImage.src,
-    tecnologias: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    demo: "#",
-    codigo: "#",
+    tecnologias: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+    demo: "https://github.com/vishallrawal/movie-website",
+    codigo: "https://github.com/vishallrawal/movie-website",
     categoria: "frontend",
   },
-
   {
-    titulo: "Online Admission System",
-    imagen: AdmissionImage.src,
-    tecnologias: ["HTML", "CSS", "JavaScript", "jQuery", "JSON"],
-    demo: "#",
-    codigo: "#",
-    categoria: "frontend",
-  },
+    titulo: "Chatbot Conversational Agent",
+    imagen: ChatbotImage.src,
+    tecnologias: ["HTML5", "CSS3", "JavaScript", "Node.js"],
+    demo: "https://github.com/vishallrawal/chatbot",
+    codigo: "https://github.com/vishallrawal/chatbot",
+    categoria: "fullstack",
+  }
 ];

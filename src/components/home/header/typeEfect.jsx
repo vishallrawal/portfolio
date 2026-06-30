@@ -3,19 +3,20 @@ import Typewriter from "typewriter-effect";
 
 const TypewriterComponent = () => {
   return (
-    <div className="notranslate mt-5 text-3xl font-bold">
+    <div className="notranslate text-2xl sm:text-4xl font-extrabold tracking-wide font-display text-cyan-400 text-shadow-cyan min-h-[40px]">
       <Typewriter
         options={{
           strings: [
-            "Frontend Developer",
-            "Backend Developer",
-            "JavaScript Developer",
-            "React Developer",
+            "Frontend Architect",
+            "React & Node Specialist",
+            "Angular & Vue Developer",
             "MERN Stack Developer",
+            "Creative UI/UX Designer",
           ],
           autoStart: true,
           loop: true,
-          deleteSpeed: 50,
+          deleteSpeed: 40,
+          delay: 60,
         }}
       />
     </div>

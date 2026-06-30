@@ -3,51 +3,58 @@ import { HiArrowRight } from "react-icons/hi";
 import MiFoto from "../../../assets/img/vishal.png";
 ---
 
-<section class="relative flex items-center justify-center px-4 pt-16">
-  <div
-    class="absolute inset-0 -z-10 mx-auto max-w-6xl blur-3xl"
-    aria-hidden="true"
-  >
-    <div class="h-[450px] w-full rounded-full bg-[#7836cf]/5"></div>
+<section class="relative flex items-center justify-center px-6 py-20 bg-transparent">
+  <!-- Glowing subtle spots behind the card -->
+  <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+    <div class="h-[300px] w-[500px] rounded-full bg-purple-600/5 blur-[120px]"></div>
   </div>
 
-  <div
-    class="mx-auto flex max-w-4xl flex-col-reverse items-stretch gap-6 md:flex-row"
-  >
-    <div
-      class="bg-base-900 border-none flex w-full items-center justify-center overflow-hidden rounded-2xl border p-0 shadow-lg md:w-1/3 drop-shadow-[4px_4px_0_#7836cf]"
-    >
-      <img
-        src={MiFoto.src}
-        alt="Vishal Rawal"
-        class="h-full w-full object-cover"
-      />
-    </div>
-
-    <div
-      class="bg-gray-900 border-none flex w-full flex-col justify-center rounded-2xl border p-6 shadow-lg md:w-2/3 drop-shadow-[4px_4px_0_#7836cf]"
-    >
-      <h2 class="text-white text-4xl font-bold drop-shadow-[2px_2px_0_#7836cf]">
-        About Me
-      </h2>
-
-      <p class="mt-2 font-semibold">
-  Web Developer passionate about building modern, responsive, and engaging web
-  applications. Experienced with HTML, CSS, JavaScript, React, Astro, and
-  Tailwind CSS, with a strong focus on performance, clean design, and user
-  experience.
-</p>
-
-      <a
-        href={`${import.meta.env.BASE_URL}about`}
-        class="group mt-4 inline-flex items-center text-primary font-bold transition-all"
-      >
-        Learn More About Me
-        <HiArrowRight
-          className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
-          size={18}
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-12 md:flex-row">
+    
+    <!-- Profile Image Showcase -->
+    <div class="relative w-full max-w-[280px] sm:max-w-[320px] md:w-1/3 flex-shrink-0 group">
+      <!-- Glow board border backdrops -->
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-3xl blur-[12px] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+      
+      <div class="relative bg-gray-900 border border-white/10 overflow-hidden rounded-3xl aspect-square shadow-2xl">
+        <img
+          src={MiFoto.src}
+          alt="Vishal Rawal"
+          class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-      </a>
+      </div>
     </div>
+
+    <!-- About Me Text Content -->
+    <div class="w-full md:w-2/3 space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Introduction</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+          Crafting Scalable, Premium Digital Products
+        </h2>
+      </div>
+
+      <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed">
+        I am a dedicated Web Developer specializing in building modern, fast, and gorgeous interfaces. Equipped with solid expertise in modern frameworks like React, Angular, Vue, and Backend integrations via Node.js, Socket.io, and relational/no-SQL databases.
+      </p>
+      
+      <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed">
+        I bridge the gap between aesthetics and functionality, engineering design systems from scratch with Tailwind CSS and utilizing Astro's islands architecture for optimized zero-JS content performance.
+      </p>
+
+      <div class="pt-2">
+        <a
+          href={`${import.meta.env.BASE_URL}about`}
+          class="group inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-purple-600/10 hover:bg-purple-600 text-purple-300 hover:text-white border border-purple-500/20 font-bold transition-all duration-300 text-sm glow-btn-purple"
+        >
+          Learn More About Me
+          <HiArrowRight
+            className="transition-transform duration-200 group-hover:translate-x-1"
+            size={16}
+          />
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>

@@ -1,58 +1,58 @@
 import PortfolioImage from "../assets/img-projects/portfolio.png";
-import ShopZoneImage from "../assets/img-projects/shopzone.jpg";
+import FlixCartImage from "../assets/img-projects/flixcart.jpg";
 import MovieImage from "../assets/img-projects/movie.png";
-import AdmissionImage from "../assets/img-projects/admission.png";
+import ChatbotImage from "../assets/img-projects/chatbot.jpg";
+import GuessingGameImage from "../assets/img-projects/guessing-game.jpg";
 
 export const proyectos = [
   {
     titulo: "Personal Portfolio Website",
     descripcion:
-      "A modern and responsive portfolio website built to showcase my skills, projects, resume, and professional profile.",
+      "A premium, state-of-the-art developer showcase with a dynamic dark theme, glassmorphic layout, glowing gradients, interactive skills marquee, and custom blog system.",
     imagen: PortfolioImage.src,
-    tecnologias: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind CSS"],
-    demo: "#",
-    codigo: "#",
+    tecnologias: ["Astro", "React", "Tailwind CSS", "JavaScript", "CSS3"],
+    demo: "https://vishallrawal.github.io/portfolio/",
+    codigo: "https://github.com/vishallrawal/portfolio",
     categoria: "frontend",
   },
-
   {
-    titulo: "ShopZone - Online Grocery Store",
+    titulo: "FlixCart - Online Shopping Website",
     descripcion:
-      "An online grocery shopping website featuring dynamic product loading, JSON integration, AJAX functionality, responsive design, and interactive user experience.",
-    imagen: ShopZoneImage.src,
-    tecnologias: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "JavaScript",
-      "jQuery",
-      "AJAX",
-      "JSON",
-    ],
-    demo: "#",
-    codigo: "#",
+      "A full-fledged responsive e-commerce application featuring product catalogs, state-managed shopping cart, user checkout simulation, search/filter, and premium styling.",
+    imagen: FlixCartImage.src,
+    tecnologias: ["TypeScript", "React", "Tailwind CSS", "Vite", "JSON"],
+    demo: "https://github.com/vishallrawal/FlixCart-Website",
+    codigo: "https://github.com/vishallrawal/FlixCart-Website",
     categoria: "frontend",
   },
-
   {
     titulo: "Movie Ticket Booking System",
     descripcion:
-      "A responsive movie ticket booking website with movie listings, seat selection, booking interface, and user-friendly design.",
+      "A rich cinematic booking application with a customizable theatre seat matrix, movie scheduling grid, real-time total calculations, and ticket summary receipts.",
     imagen: MovieImage.src,
-    tecnologias: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    demo: "#",
-    codigo: "#",
+    tecnologias: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "DOM Manipulation"],
+    demo: "https://github.com/vishallrawal/movie-website",
+    codigo: "https://github.com/vishallrawal/movie-website",
     categoria: "frontend",
   },
-
   {
-    titulo: "Online Admission System",
+    titulo: "Chatbot Conversational Agent",
     descripcion:
-      "A web-based admission management system with course information, admission forms, validation, and interactive user experience.",
-    imagen: AdmissionImage.src,
-    tecnologias: ["HTML", "CSS", "JavaScript", "jQuery", "JSON"],
-    demo: "#",
-    codigo: "#",
-    categoria: "frontend",
+      "An interactive conversational chatbot interface built for rapid, real-time message handling, featuring mock automated AI responses, typing indicators, and message history logs.",
+    imagen: ChatbotImage.src,
+    tecnologias: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express"],
+    demo: "https://github.com/vishallrawal/chatbot",
+    codigo: "https://github.com/vishallrawal/chatbot",
+    categoria: "fullstack",
   },
+  {
+    titulo: "Number Guessing CLI Game",
+    descripcion:
+      "A classic algorithmic CLI terminal game developed in C, featuring dynamic difficulty levels, randomized target generators, guess counters, and high score tracking.",
+    imagen: GuessingGameImage.src,
+    tecnologias: ["C Programming", "CLI", "Algorithms", "Randomization"],
+    demo: "https://github.com/vishallrawal/number-guessing-game",
+    codigo: "https://github.com/vishallrawal/number-guessing-game",
+    categoria: "backend",
+  }
 ];

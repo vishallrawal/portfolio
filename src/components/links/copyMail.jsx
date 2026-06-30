@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegCopy } from "react-icons/fa";
+import { FiCopy, FiCheck } from "react-icons/fi";
 
 export default function EmailCopy() {
   const [copied, setCopied] = useState(false);
@@ -16,14 +16,27 @@ export default function EmailCopy() {
   };
 
   return (
-    <div className="m-6 flex items-center gap-3 ">
-      <h1 className="text-lg font-medium">{email}</h1>
+    <div className="flex items-center gap-4 bg-gray-900/60 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/5 shadow-2xl">
+      <span className="text-gray-300 font-semibold text-sm sm:text-base selection:bg-purple-500/30">{email}</span>
       <button
         onClick={copyToClipboard}
-        className="flex items-center gap-2 cursor-pointer font-bold rounded-md border-none  px-2 py-1 text-sm bg-primary hover:bg-secondary drop-shadow-[2px_2px_0_#0debd8]"
+        className={`flex items-center gap-2 cursor-pointer font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 ${
+          copied 
+            ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/20" 
+            : "bg-purple-600 hover:bg-purple-500 text-white glow-btn-purple"
+        }`}
       >
-        <FaRegCopy className="text-gray-300" />
-        {copied ? "Copied!" : "Copy"}
+        {copied ? (
+          <>
+            <FiCheck size={14} />
+            <span>Copied</span>
+          </>
+        ) : (
+          <>
+            <FiCopy size={14} />
+            <span>Copy</span>
+          </>
+        )}
       </button>
     </div>
   );

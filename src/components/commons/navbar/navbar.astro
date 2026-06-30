@@ -1,38 +1,37 @@
 ---
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
 const navLinks = [
   { name: "Home", href: import.meta.env.BASE_URL },
   { name: "Projects", href: `${import.meta.env.BASE_URL}proyectos` },
   { name: "About", href: `${import.meta.env.BASE_URL}about` },
+  { name: "Blog", href: `${import.meta.env.BASE_URL}blog` },
   { name: "Contact", href: `${import.meta.env.BASE_URL}contact` },
 ];
 ---
 
-<nav class="relative">
-  <input id="menu-toggle" type="checkbox" class="peer hidden md:hidden" />
-
-  <nav
-    class="fixed top-0 left-0 w-full z-50 bg-gray-950/20 backdrop-blur-md border-b border-white/10"
-  >
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-      <a href={import.meta.env.BASE_URL} class="flex items-center">
-        <h3
-          class="text-[#69c7c7] text-3xl font-bold drop-shadow-[1.5px_1.5px_0_#7836cf]"
-        >
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4" id="main-header">
+  <div class="max-w-7xl mx-auto px-6">
+    <nav class="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between shadow-2xl border-white/5 transition-all duration-300" id="navbar-container">
+      
+      <!-- Brand Logo -->
+      <a href={import.meta.env.BASE_URL} class="flex items-center group">
+        <span class="text-3xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-500 to-cyan-400 group-hover:opacity-90 transition-opacity">
           VR
-        </h3>
+        </span>
+        <span class="hidden sm:inline-block ml-2 text-sm font-semibold tracking-widest text-gray-400 group-hover:text-white transition-colors uppercase">
+          • PORTFOLIO
+        </span>
       </a>
 
-      <ul id="navbar-links" class="hidden md:flex items-center space-x-8">
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center space-x-8">
         {
           navLinks.map((link) => (
             <li>
               <a
                 href={link.href}
-                class="nav-link font-bold transition-colors duration-300 text-white hover:text-[#7d2dac]"
+                class="nav-link text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -41,19 +40,40 @@ const navLinks = [
         }
       </ul>
 
-    </div>
-  </nav>
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center">
+        <a
+          href={`${import.meta.env.BASE_URL}contact`}
+          class="px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm rounded-xl transition-all duration-300 glow-btn-purple"
+        >
+          Let's Talk
+        </a>
+      </div>
 
-  <div
-    class="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 peer-checked:translate-x-0 z-50 md:hidden"
-  >
-    <ul id="navbar-links-mobile" class="flex flex-col space-y-6 mt-6 ml-6">
+      <!-- Mobile Menu Toggle Button -->
+      <label for="menu-toggle" class="md:hidden flex items-center p-2 text-gray-400 hover:text-white cursor-pointer select-none">
+        <div class="space-y-1.5" id="hamburger-icon">
+          <span class="block w-6 h-0.5 bg-gray-300 rounded transition-transform duration-300" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-gray-300 rounded transition-opacity duration-300" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-gray-300 rounded transition-transform duration-300" id="bar3"></span>
+        </div>
+      </label>
+
+    </nav>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <input id="menu-toggle" type="checkbox" class="peer hidden" />
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm -z-10 opacity-0 pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300 md:hidden" id="mobile-overlay"></div>
+  
+  <div class="absolute top-[88px] left-6 right-6 glass-panel rounded-2xl p-6 shadow-2xl border-white/5 flex flex-col space-y-4 opacity-0 scale-95 origin-top pointer-events-none peer-checked:opacity-100 peer-checked:scale-100 peer-checked:pointer-events-auto transition-all duration-300 md:hidden">
+    <ul class="flex flex-col space-y-4">
       {
         navLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class="nav-link-mobile text-lg font-bold text-white hover:text-[#69c7c7]"
+              class="block text-lg font-semibold text-gray-300 hover:text-white px-3 py-2 rounded-xl hover:bg-white/5 transition-all"
             >
               {link.name}
             </a>
@@ -61,5 +81,59 @@ const navLinks = [
         ))
       }
     </ul>
+    
+    <div class="pt-4 border-t border-white/10">
+      <a
+        href={`${import.meta.env.BASE_URL}contact`}
+        class="block w-full text-center py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold rounded-xl transition-all glow-btn-purple"
+      >
+        Let's Talk
+      </a>
+    </div>
   </div>
-</nav>
+</header>
+
+<!-- Spacer to prevent header overlaying content -->
+<div class="h-28"></div>
+
+<script is:inline>
+  // Dynamic header sizing on scroll
+  const header = document.getElementById('main-header');
+  const navContainer = document.getElementById('navbar-container');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.remove('py-4');
+      header.classList.add('py-2');
+      navContainer.classList.add('shadow-purple-500/5');
+    } else {
+      header.classList.remove('py-2');
+      header.classList.add('py-4');
+      navContainer.classList.remove('shadow-purple-500/5');
+    }
+  });
+
+  // Mobile navbar burger active animation
+  const menuToggle = document.getElementById('menu-toggle');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+
+  menuToggle.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      bar1.style.transform = 'translateY(8px) rotate(45deg)';
+      bar2.style.opacity = '0';
+      bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+    } else {
+      bar1.style.transform = 'none';
+      bar2.style.opacity = '1';
+      bar3.style.transform = 'none';
+    }
+  });
+
+  mobileOverlay.addEventListener('click', () => {
+    menuToggle.checked = false;
+    menuToggle.dispatchEvent(new Event('change'));
+  });
+</script>

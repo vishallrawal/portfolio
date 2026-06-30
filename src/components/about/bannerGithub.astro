@@ -3,40 +3,49 @@ const githubUrl = "https://github.com/vishallrawal";
 const imageUrl = `${import.meta.env.BASE_URL}github.png`;
 ---
 
-<section class="mt-16 flex justify-center px-4">
-	<div
-		class="mx-auto max-h-80 w-full max-w-[1120px] overflow-hidden rounded-2xl bg-linear-to-r from-[#211355] to-[#12186e] text-white shadow-lg drop-shadow-[4px_4px_0_#7836cf]"
-	>
-		<div class="flex h-full flex-col items-center md:flex-row-reverse md:items-start">
-			<div class="flex h-full w-full shrink-0 items-center justify-center md:w-auto md:justify-end">
-				<a href={githubUrl} target="_blank" rel="noopener noreferrer">
-					<img
-						src={imageUrl}
-						alt="GitHub Logo"
-						class="h-auto w-72 cursor-pointer object-contain transition hover:scale-105 md:w-[470px]"
-					/>
-				</a>
-			</div>
+<section class="mt-20 flex justify-center px-6">
+  <div
+    class="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-r from-purple-950/40 to-slate-900/60 border border-white/10 text-white shadow-2xl relative"
+  >
+    <!-- Background glowing light spot -->
+    <div class="absolute right-0 top-0 w-64 h-64 bg-purple-500/10 blur-[80px] pointer-events-none"></div>
 
-			<div class="flex-1 p-4 text-center md:p-8 md:text-left">
-				<h3 class="text-5xl font-bold md:text-4xl">
-					Visit My GitHub!
-				</h3>
+    <div class="flex flex-col md:flex-row-reverse items-center justify-between p-8 md:p-12 gap-8">
+      
+      <!-- Logo Image Column -->
+      <div class="w-full max-w-[240px] md:max-w-[320px] flex-shrink-0 flex items-center justify-center">
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="block group">
+          <img
+            src={imageUrl}
+            alt="GitHub logo"
+            class="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-300 filter drop-shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+          />
+        </a>
+      </div>
 
-				<p class="mt-2 text-sm md:text-xl">
-					Explore my GitHub profile to view my projects,
-					contributions, and development journey.
-				</p>
+      <!-- Info Column -->
+      <div class="flex-1 text-center md:text-left space-y-4">
+        <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Open Source</span>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white font-display leading-tight">
+          Explore My Contributions On GitHub
+        </h3>
 
-				<a
-					href={githubUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="mt-4 inline-block rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:bg-gray-200"
-				>
-					View GitHub
-				</a>
-			</div>
-		</div>
-	</div>
+        <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed max-w-xl">
+          Check out my public repositories, contribution graph, code samples, and collaborative commits to various open-source ecosystems.
+        </p>
+
+        <div class="pt-2">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold rounded-xl transition-all duration-300 glow-btn-purple text-sm uppercase tracking-wider"
+          >
+            Visit Profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>

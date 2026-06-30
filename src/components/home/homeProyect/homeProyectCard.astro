@@ -10,36 +10,44 @@ export interface Props {
 const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
 ---
 
-<div
-  class="group flex w-full max-w-md mx-auto flex-col overflow-hidden rounded-xl bg-gray-900 border border-none transition-all hover:scale-[1.015] drop-shadow-[4px_4px_0_#7836cf]"
->
-  <img
-    src={imagen}
-    alt={`Project: ${titulo}`}
-    class="h-52 p-3 w-full object-cover rounded-2xl"
-  />
+<div class="group glass-card rounded-2xl overflow-hidden flex flex-col h-full border-white/5 hover:border-purple-500/30">
+  <!-- Card image container with scaling mask -->
+  <div class="relative h-48 overflow-hidden bg-gray-950/40">
+    <!-- Overlay accent gradient mask -->
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-60 z-10"></div>
+    <img
+      src={imagen}
+      alt={`Project: ${titulo}`}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+    />
+  </div>
 
-  <div class="flex flex-col grow p-3">
-    <h3 class="text-lg font-semibold mb-2 text-white drop-shadow-[1px_1px_0_#7836cf]">
-      {titulo}
-    </h3>
+  <div class="p-5 flex flex-col grow space-y-4">
+    <div class="space-y-1">
+      <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
+        {titulo}
+      </h3>
+    </div>
 
-    <div class="flex flex-wrap gap-2 mb-4">
+    <!-- Technologies list -->
+    <div class="flex flex-wrap gap-1.5">
       {
         tecnologias.map((tech) => (
-          <span class="rounded-md bg-[#7836cf]/20 text-[#a27ed1] px-2 py-0.5 text-xs font-semibold">
+          <span class="rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/10 px-2 py-0.5 text-xs font-semibold">
             {tech}
           </span>
         ))
       }
     </div>
 
-    <div class="mt-auto flex justify-between gap-3">
+    <!-- Action links -->
+    <div class="mt-auto pt-4 flex items-center justify-between gap-4 border-t border-white/5">
       <a
         href={demo}
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+        class="w-full text-center border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 text-gray-300 hover:text-cyan-400 py-2 rounded-xl text-xs font-bold transition-all"
       >
         Live Demo
       </a>
@@ -48,7 +56,7 @@ const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
         href={codigo}
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+        class="w-full text-center border border-white/10 hover:border-purple-500/50 hover:bg-purple-500/10 text-gray-300 hover:text-purple-400 py-2 rounded-xl text-xs font-bold transition-all"
       >
         Source Code
       </a>

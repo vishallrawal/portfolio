@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/commons/hero/hero.astro";
+import BlogListContainer from "../components/blog/BlogListContainer.jsx";
+import { blogPosts } from "../data/blogData.js";
+import Banner from "../components/commons/banners/banner.astro";
+---
+
+<Layout 
+  title="Developer Blog | Vishal Rawal" 
+  description="Explore technical write-ups, tutorials, tips, and insights on Angular, Vue, React, Tailwind CSS, JavaScript, and modern web architectures."
+>
+  <Hero titulo="Tech Blog" />
+
+  <!-- Subtitle intro -->
+  <div class="max-w-2xl mx-auto text-center px-6 mt-6 mb-12">
+    <p class="text-gray-400 text-base md:text-lg font-medium leading-relaxed">
+      Sharing thoughts, tutorials, and notes on design systems, code architecture, and learning modern technologies.
+    </p>
+  </div>
+
+  <!-- Real-time dynamic blog wrapper -->
+  <BlogListContainer posts={blogPosts} client:load />
+
+  <Banner />
+</Layout>

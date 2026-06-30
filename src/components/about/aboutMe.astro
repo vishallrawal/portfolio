@@ -3,44 +3,41 @@ import MiFoto from "../../assets/img/vishal.png";
 ---
 
 <div
-  class="mx-auto mt-20 flex max-w-6xl flex-col items-center gap-8 px-6 lg:flex-row"
+  class="mx-auto mt-16 flex max-w-6xl flex-col items-center gap-12 px-6 lg:flex-row"
 >
-  <!-- Image -->
-  <div
-    class="border-primary h-64 w-64 overflow-hidden rounded-2xl shadow-lg md:h-96 md:w-96 drop-shadow-[4px_4px_0_#7836cf]"
-  >
-    <img
-      src={MiFoto.src}
-      alt="Vishal Rawal"
-      class="h-full w-full object-cover"
-    />
+  <!-- Interactive Profile Picture Container -->
+  <div class="relative w-full max-w-[280px] sm:max-w-[340px] flex-shrink-0 group">
+    <!-- Glow border -->
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-3xl blur-[12px] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+    
+    <div class="relative bg-gray-900 border border-white/10 overflow-hidden rounded-3xl aspect-square shadow-2xl">
+      <img
+        src={MiFoto.src}
+        alt="Vishal Rawal"
+        class="h-full w-full object-cover group-hover:scale-102 transition-transform duration-500"
+      />
+    </div>
   </div>
 
-  <!-- Content -->
-  <div class="flex-1 text-center text-gray-300 lg:text-left">
-    <h2 class="text-3xl font-bold text-white">
-      My name is <span class="text-white text-shadow">Vishal Rawal</span>
-    </h2>
+  <!-- Content Biography Details -->
+  <div class="flex-1 text-center lg:text-left space-y-6">
+    <div class="space-y-2">
+      <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Biography</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+        I am <span class="text-gradient">Vishal Rawal</span>
+      </h2>
+    </div>
 
-    <p class="mt-4">
-      I am a passionate Web Developer focused on creating modern, responsive,
-      and user-friendly web applications. I enjoy building clean and engaging
-      digital experiences using technologies such as HTML, CSS, JavaScript,
-      React, Astro, and Tailwind CSS.
+    <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed">
+      A passionate Fullstack Web Developer specialized in crafting high-fidelity user experiences and reliable backend architectures. I continuously strive to solve complex challenges by writing clean, modular, and performant code.
     </p>
 
-    <p class="mt-4">
-      My interest in technology and programming started through curiosity and
-      grew into a strong passion for web development. I continuously explore
-      new technologies, improve my development skills, and work on practical
-      projects that help me gain real-world experience.
+    <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed">
+      My background involves extensive practicing in modern Javascript technologies, including React, Angular, Vue, and Tailwind CSS. On the backend, I design socket connections, databases, and express routes to create comprehensive real-time systems.
     </p>
 
-    <p class="mt-4">
-      I am committed to continuous learning, problem-solving, and creating
-      impactful digital solutions. My goal is to become a skilled MERN Stack
-      Developer and contribute to innovative software projects while delivering
-      high-quality user experiences.
+    <p class="text-gray-400 text-sm sm:text-base font-medium leading-relaxed">
+      I believe in open-source collaboration and the constant evolution of my skill set. My ultimate career focus is to architect large-scale client applications, leverage MERN integrations, and contribute to cutting-edge web developments.
     </p>
   </div>
 </div>

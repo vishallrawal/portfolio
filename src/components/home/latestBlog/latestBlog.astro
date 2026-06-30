@@ -1,0 +1,68 @@
+---
+import { blogPosts } from "../../../data/blogData.js";
+import { FiCalendar, FiClock } from "react-icons/fi";
+
+const latestPosts = blogPosts.slice(0, 3);
+---
+
+<section class="py-20 bg-transparent relative">
+  <!-- Decorative Glowing Blur -->
+  <div class="absolute bottom-10 right-[10%] w-[300px] h-[300px] rounded-full bg-cyan-600/5 blur-[120px] pointer-events-none -z-10 animate-pulse-slow"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Title -->
+    <div class="text-center space-y-3 mb-16">
+      <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Insights</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-display leading-tight">
+        Latest Articles
+      </h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        latestPosts.map((post) => (
+          <a
+            href={`${import.meta.env.BASE_URL}blog#post-${post.id}`}
+            class="group glass-card rounded-2xl overflow-hidden flex flex-col h-full border-white/5 hover:border-purple-500/30"
+          >
+            <div class="p-6 flex flex-col grow space-y-4">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-2.5 py-1 rounded-lg">
+                  {post.category}
+                </span>
+                <span class="text-gray-500 font-semibold">{post.readTime}</span>
+              </div>
+
+              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors line-clamp-2">
+                {post.title}
+              </h3>
+
+              <p class="text-gray-400 text-sm font-medium leading-relaxed line-clamp-3">
+                {post.excerpt}
+              </p>
+
+              <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500 font-semibold">
+                <span class="flex items-center gap-1"><FiCalendar /> {post.publishedAt}</span>
+                <span class="text-purple-400 font-bold group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
+                  Read &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Action Link -->
+    <div class="mt-16 flex justify-center">
+      <a
+        href={`${import.meta.env.BASE_URL}blog`}
+        class="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold rounded-2xl transition-all duration-300 glow-btn-purple text-sm uppercase tracking-wider"
+      >
+        View All Articles
+      </a>
+    </div>
+  </div>
+</section>
