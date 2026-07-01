@@ -12,7 +12,7 @@ export const proyectos = [
       "A premium, state-of-the-art developer showcase with a dynamic dark theme, glassmorphic layout, glowing gradients, interactive skills marquee, and custom blog system.",
     imagen: PortfolioImage.src,
     tecnologias: ["Astro", "React", "Tailwind CSS", "JavaScript", "CSS3"],
-    demo: "https://vishallrawal.github.io/",
+    demo: "https://vishallrawal.github.io/portfolio/",
     codigo: "https://github.com/vishallrawal/portfolio",
     categoria: "frontend",
   },
