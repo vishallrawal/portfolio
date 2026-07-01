@@ -1,4 +1,5 @@
 import PortfolioImage from "../assets/img-projects/portfolio.png";
+import VidyaEnrollImage from "../assets/img-projects/vidyaenroll.jpg";
 import FlixCartImage from "../assets/img-projects/flixcart.jpg";
 import MovieImage from "../assets/img-projects/movie.png";
 import ChatbotImage from "../assets/img-projects/chatbot.jpg";
@@ -16,12 +17,22 @@ export const proyectos = [
     categoria: "frontend",
   },
   {
+    titulo: "VidyaEnroll - AI Admission Portal",
+    descripcion:
+      "An advanced, AI-powered academic admission council portal featuring stream eligibility calculations, multi-step forms, digital document upload, mock UPI/card payment checkout, and a student/admin dashboard.",
+    imagen: VidyaEnrollImage.src,
+    tecnologias: ["React", "TypeScript", "Vite", "Bootstrap 5", "Gemini AI", "CSS3"],
+    demo: "https://vishallrawal.github.io/vidhyaenroll-admission-system/",
+    codigo: "https://github.com/vishallrawal/vidhyaenroll-admission-system",
+    categoria: "frontend",
+  },
+  {
     titulo: "FlixCart - Online Shopping Website",
     descripcion:
       "A full-fledged responsive e-commerce application featuring product catalogs, state-managed shopping cart, user checkout simulation, search/filter, and premium styling.",
     imagen: FlixCartImage.src,
     tecnologias: ["TypeScript", "React", "Tailwind CSS", "Vite", "JSON"],
-    demo: "https://github.com/vishallrawal/FlixCart-Website",
+    demo: "https://vishallrawal.github.io/FlixCart-Website",
     codigo: "https://github.com/vishallrawal/FlixCart-Website",
     categoria: "frontend",
   },
