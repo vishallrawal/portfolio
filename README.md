@@ -2,7 +2,7 @@
 
 A premium, modern, and highly responsive personal portfolio website showcasing my skills, projects, education, technical blog, and web development journey.
 
-🔗 **Live Link:** [https://vishallrawal.github.io/portfolio/](https://vishallrawal.github.io/portfolio/)
+🔗 **Live Link:** [https://vishallrawal.github.io/]
 
 ---
 
