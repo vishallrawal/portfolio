@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishal Rawal - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #475569;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+      --text: #0f172a;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: #ffffff;
+      line-height: 1.4;
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 13.5px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--secondary);
+    }
+
+    .contact-info span:not(:last-child)::after {
+      content: " • ";
+      margin-left: 12px;
+      color: var(--border);
+    }
+
+    section {
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-text {
+      color: var(--secondary);
+      text-align: justify;
+    }
+
+    .education-item, .project-item, .experience-item {
+      margin-bottom: 10px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .item-subHeader {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 18px;
+      color: var(--secondary);
+    }
+
+    li {
+      margin-bottom: 3px;
+      text-align: justify;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 5px;
+      font-size: 13px;
+    }
+
+    .skills-category {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .skills-list {
+      color: var(--secondary);
+    }
+
+    .double-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+      }
+      section {
+        margin-bottom: 12px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Vishal Rawal</h1>
+    <div class="contact-info">
+      <span>Surat, Gujarat, India</span>
+      <span>+91 8128073844</span>
+      <span><a href="mailto:vishalrawal448@gmail.com">vishalrawal448@gmail.com</a></span>
+    </div>
+    <div class="contact-info" style="margin-top: 4px;">
+      <span>Portfolio: <a href="https://vishallrawal.github.io/portfolio/" target="_blank">vishallrawal.github.io/portfolio</a></span>
+      <span>GitHub: <a href="https://github.com/vishallrawal" target="_blank">github.com/vishallrawal</a></span>
+      <span>LinkedIn: <a href="https://linkedin.com/in/vishalrawal" target="_blank">linkedin.com/in/vishalrawal</a></span>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <section>
+    <h2>Profile Summary</h2>
+    <p class="summary-text">
+      Detail-oriented Frontend Developer and BCA student at SDJ International College with a strong foundation in modern web architectures (React, Astro, TypeScript, Tailwind CSS). Experienced in building responsive, interactive applications, integrating generative AI SDKs, and managing local database transactions. Passionate about problem-solving and open-source contributions. Seeking a Frontend Developer Internship to deliver premium user experiences.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="item-header">
+        <span>SDJ International College (Veer Narmad South Gujarat University)</span>
+        <span>Surat, Gujarat</span>
+      </div>
+      <div class="item-subHeader">
+        <span>Bachelor of Computer Applications (BCA)</span>
+        <span>2024 — 2027</span>
+      </div>
+      <div style="font-weight: 550; color: var(--primary);">CGPA: 8.6 / 10</div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-category">Languages:</div>
+      <div class="skills-list">JavaScript (ES6+), TypeScript, HTML5, CSS3, C, Python</div>
+      
+      <div class="skills-category">Frameworks & Libs:</div>
+      <div class="skills-list">React.js, Astro, Tailwind CSS, Bootstrap 5, Node.js, Express.js, Django</div>
+      
+      <div class="skills-category">Databases:</div>
+      <div class="skills-list">MongoDB, MySQL, SQLite</div>
+      
+      <div class="skills-category">Developer Tools:</div>
+      <div class="skills-list">Git, GitHub, VS Code, Vite, npm / bun, Figma</div>
+      
+      <div class="skills-category">Core Concepts:</div>
+      <div class="skills-list">REST APIs, Responsive Design, State Management, OOP, Data Structures, AI APIs Integration</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Key Frontend Projects</h2>
+    
+    <!-- Project 1 -->
+    <div class="project-item">
+      <div class="item-header">
+        <span>VidyaEnroll – AI Admission Portal</span>
+        <span><a href="https://vishallrawal.github.io/vidhyaenroll-admission-system/" target="_blank">Live Link</a> | <a href="https://github.com/vishallrawal/vidhyaenroll-admission-system" target="_blank">GitHub</a></span>
+      </div>
+      <div class="item-subHeader">
+        <span>React, TypeScript, Vite, Bootstrap 5, Gemini AI SDK</span>
+        <span>2026</span>
+      </div>
+      <ul>
+        <li>Implemented a responsive multi-step admission wizard with real-time subject eligibility evaluations and Aadhaar verification.</li>
+        <li>Integrated Google Gemini API for client counseling, with an offline rule-based Counseling fallback.</li>
+        <li>Designed a mock payment portal featuring QR code UPI scan actions and a 3D credit card widget with interactive hover-tilt and flip effects.</li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-item" style="margin-top: 8px;">
+      <div class="item-header">
+        <span>FlixCart – Online E-Commerce Catalog</span>
+        <span><a href="https://vishallrawal.github.io/FlixCart-Website/" target="_blank">Live Link</a> | <a href="https://github.com/vishallrawal/FlixCart-Website" target="_blank">GitHub</a></span>
+      </div>
+      <div class="item-subHeader">
+        <span>React, Astro, Tailwind CSS, Vite, Zustand State Management</span>
+        <span>2026</span>
+      </div>
+      <ul>
+        <li>Built a responsive Astro and React catalog featuring Zustand client-side shopping list state management, categories autocomplete searches, product comparisons, and dark/light mode toggles styled using Tailwind CSS utility variables.</li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-item" style="margin-top: 8px;">
+      <div class="item-header">
+        <span>Personal Portfolio Website</span>
+        <span><a href="https://vishallrawal.github.io/portfolio/" target="_blank">Live Link</a> | <a href="https://github.com/vishallrawal/portfolio" target="_blank">GitHub</a></span>
+      </div>
+      <div class="item-subHeader">
+        <span>Astro, React, Tailwind CSS, Vite</span>
+        <span>2026</span>
+      </div>
+      <ul>
+        <li>Designed a premium, state-of-the-art developer showcase featuring a dynamic dark theme, glassmorphic layout, and glowing gradients. Integrated an interactive skills marquee, a contact validation system, and a custom blog layout.</li>
+      </ul>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-item" style="margin-top: 8px;">
+      <div class="item-header">
+        <span>Movie Booking & Showcase Website</span>
+        <span><a href="https://github.com/vishallrawal/movie-website" target="_blank">GitHub</a></span>
+      </div>
+      <div class="item-subHeader">
+        <span>HTML5, CSS3, Bootstrap, JavaScript</span>
+        <span>2024</span>
+      </div>
+      <ul>
+        <li>Engineered a responsive movie ticketing application containing interactive seat selection matrices, pricing schedules, and transaction receipts. Styled using HTML5, CSS3, Bootstrap, and vanilla JavaScript.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience & Achievements -->
+  <div class="double-col">
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="item-header">
+          <span>Open Source Contributor</span>
+          <span>2024 — Present</span>
+        </div>
+        <div class="item-subHeader">
+          <span>GitHub Projects</span>
+          <span>Remote</span>
+        </div>
+        <ul style="padding-left: 14px;">
+          <li>Staged and pushed bug fixes and documentation patches.</li>
+          <li>Collaborated with maintainers using Git/GitHub.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2>Achievements & Extra</h2>
+      <ul style="padding-left: 14px; margin-top: 2px;">
+        <li><strong>Winner</strong> — Blind Coding Competition (College)</li>
+        <li><strong>Winner</strong> — Error Finding Competition (College)</li>
+        <li><strong>Active Contributor</strong> — College technical magazine</li>
+        <li><strong>Volunteer</strong> — Technical student workshops</li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.93]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titrule]
+% Clean balanced spacing: 10pt before a section rule, 5pt after, to look perfectly readable and professional
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \vspace{-4pt}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Vishal Rawal} \\[6pt]
+\href{https://github.com/vishallrawal}{\raisebox{-0.05\height}\faGithub\ vishallrawal} \ $|$ \ 
+\href{https://linkedin.com/in/vishalrawal}{\raisebox{-0.05\height}\faLinkedin\ vishallrawal} \ $|$ \ 
+\href{https://vishallrawal.github.io/portfolio/}{\raisebox{-0.05\height}\faGlobe \ vishallrawal.github.io/portfolio} \ $|$ \ 
+\href{mailto:vishalrawal448@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ vishalrawal448@gmail.com} \ $|$ \ 
+\href{tel:+918128073844}{\raisebox{-0.05\height}\faMobile \ +91-8128073844} \\
+\small{Surat, Gujarat, India}
+\end{tabularx}
+\vspace{2pt}
+
+%----------------------------------------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------------------------------------
+\section{Summary}
+Detail-oriented Frontend Developer and BCA student at SDJ International College with a strong foundation in modern web architectures (React, Astro, TypeScript, Tailwind CSS). Experienced in building responsive, interactive applications, integrating generative AI SDKs, and managing local database transactions. Passionate about problem-solving and open-source contributions. Seeking a Frontend Developer Internship to deliver premium user experiences.
+
+%----------------------------------------------------------------------------------------
+% OPEN SOURCE CONTRIBUTIONS
+%----------------------------------------------------------------------------------------
+\section{Open Source Contributions}
+
+\begin{joblong}{Independent Contributor}{2024 - Present}
+\item Staged, reviewed, and pushed bug fixes and documentation enhancements to public GitHub projects.
+\item Collaborated with maintainers on codebase improvements, issue resolution, and Git pull request reviews.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Featured Frontend Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{VidyaEnroll -- AI Admission Portal} & \hfill \href{https://vishallrawal.github.io/vidhyaenroll-admission-system/}{Live Demo} \ $|$ \ \href{https://github.com/vishallrawal/vidhyaenroll-admission-system}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small{Developed a responsive multi-step admission wizard using React, TypeScript, and Bootstrap 5. Features real-time subject eligibility evaluations, Aadhaar validation rules, and a mock payment portal with 3D-tilting credit card effects and UPI QR scanning simulator. Connected to Gemini AI API for counseling query dialogue responses.}}  \\[6.5pt]
+
+\textbf{FlixCart -- Online E-Commerce Catalog} & \hfill \href{https://vishallrawal.github.io/FlixCart-Website/}{Live Demo} \ $|$ \ \href{https://github.com/vishallrawal/FlixCart-Website}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small{Built a responsive Astro and React catalog featuring Zustand client-side shopping list state management, categories autocomplete searches, product comparisons, and dark/light mode toggles styled using Tailwind CSS utility variables.}}  \\[6.5pt]
+
+\textbf{Personal Portfolio Website} & \hfill \href{https://vishallrawal.github.io/portfolio/}{Live Demo} \ $|$ \ \href{https://github.com/vishallrawal/portfolio}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small{Designed a premium, state-of-the-art developer showcase featuring a dynamic dark theme, glassmorphic layout, and glowing gradients. Integrated an interactive skills marquee, a contact validation system, and a custom blog layout.}}  \\[6.5pt]
+
+\textbf{Movie Booking \& Showcase Website} & \hfill \href{https://github.com/vishallrawal/movie-website}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small{Engineered a responsive movie ticketing application containing interactive seat selection matrices, pricing schedules, and transaction receipts. Styled using HTML5, CSS3, Bootstrap, and vanilla JavaScript.}}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}	
+2024 - 2027 & Bachelor of Computer Applications (BCA) at \textbf{SDJ International College} & (CGPA: 8.6/10.0) \\
+ & Veer Narmad South Gujarat University, Surat, Gujarat & \\
+\end{tabularx}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages & JavaScript (ES6+), TypeScript, HTML5, CSS3, C, Python \\
+Frameworks \& Libs & React.js, Astro, Tailwind CSS, Bootstrap 5, Node.js, Express.js, Django \\
+Databases & MongoDB, MySQL, SQLite \\
+Developer Tools & Git, GitHub, VS Code, Vite, npm / bun, Figma \\
+Core Concepts & REST APIs, Responsive Design, State Management, OOP, Data Structures, AI APIs Integration
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	ACHIEVEMENTS
+%----------------------------------------------------------------------------------------
+\section{Achievements \& Extra-Curriculars}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Blind Coding & Winner of inter-college coding competition. \\
+Error Finding & Winner of error detection and debugging competition. \\
+Extra-Curricular & Active contributor to college technical magazine; volunteer at student workshops.
+\end{tabularx}
+
+\end{document}
